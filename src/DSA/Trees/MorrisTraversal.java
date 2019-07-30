@@ -36,6 +36,31 @@ public class MorrisTraversal {
         }
 
     }
+    static void MorrisTraversePostOrder(node root){
+        if(root==null)
+            return;
+        while(root!=null) {
+            if (root.right == null) {
+                System.out.print(root.key + " ");
+                root = root.left;
+            } else {
+                node right = root.right;
+                while (right.right != null && right.right != root)
+                    right = right.left;
+                if (right.left == null) {
+                    right.left = root;
+                    root = root.right;
+                }else {
+                    right.left = null;
+                    System.out.print(root.key+" ");
+                    root = root.left;
+                }
+
+            }
+        }
+
+    }
+
 
     static void MorrisTraversePreorder(node root){
         if(root==null)
@@ -70,6 +95,6 @@ public class MorrisTraversal {
         root.left.left = new node(4);
         root.left.right = new node(5);
 
-        MorrisTraversePreorder(root);
+        MorrisTraversePostOrder(root);
     }
 }
