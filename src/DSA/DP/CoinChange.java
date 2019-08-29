@@ -1,4 +1,6 @@
-class CoinChange{
+package DSA.DP;
+
+public class CoinChange {
     public static void main(String[] args) {
         int[] arr = {1, 2, 5};
         int n = 4;
@@ -10,10 +12,10 @@ class CoinChange{
         int[] dp = new int[n+1];
         dp[0] = 1;
 
-        for(int i=0;i<=arr.length;i++){
+        for(int i=0;i<arr.length;i++){
 
             for(int j= arr[i];j<=n;j++){
-                dp[j] += dp[j-S[i]];
+                dp[j] += dp[j-arr[i]];
             }
         }
         return dp[n];
