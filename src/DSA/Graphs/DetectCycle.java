@@ -8,15 +8,15 @@ public class DetectCycle {
     static class Graph {
         int v;
         int e;
-        //LinkedList<Edges>[] adjList;
+        //ReverseLinkedList<Edges>[] adjList;
         Edges[] edges;
 
         Graph(int v, int e) {
             this.v = v;
             this.e = e;
-            /*adjList = new LinkedList[v];
+            /*adjList = new ReverseLinkedList[v];
             for(int i=0;i<v;i++){
-                adjList[i] = new LinkedList<>();
+                adjList[i] = new ReverseLinkedList<>();
             }*/
             edges = new Edges[this.e];
         }

@@ -1,6 +1,6 @@
 package DSA.LinkedList;
 
-public class RemoveElement {
+public class  RemoveElement {
 
     static class Node {
         Node(int data) {

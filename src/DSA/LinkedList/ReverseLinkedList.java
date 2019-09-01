@@ -1,7 +1,7 @@
 package DSA.LinkedList;
 
 
-public class LinkedList {
+public class ReverseLinkedList {
 
 
         static Node head;
@@ -21,14 +21,6 @@ public class LinkedList {
         Node reverse(Node node) {
             Node prev = null;
             Node current = node;
-            current.next = null;
-
-            Node node1 = new Node(4);
-            Node node2 = new Node(4);
-
-            if(node1.equals(node2)){
-                System.out.println("sdf");
-            }
             Node next = null;
             while (current != null) {
                 next = current.next;
@@ -49,7 +41,7 @@ public class LinkedList {
         }
 
         public static void main(String[] args) {
-            LinkedList list = new LinkedList();
+            ReverseLinkedList list = new ReverseLinkedList();
             list.head = new Node(85);
             list.head.next = new Node(15);
             list.head.next.next = new Node(4);

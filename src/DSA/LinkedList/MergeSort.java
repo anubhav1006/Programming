@@ -69,6 +69,17 @@ public class MergeSort {
         return slowptr;
     }
 
+    private static Node midElement(Node head){
+        if(head==null)
+            return null;
+        Node slow=head, fast=head;
+        while(fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
     static void printList(Node head) {
         if (head == null)
             System.out.println("List is empty");
@@ -87,7 +98,7 @@ public class MergeSort {
         node = mergeSort(node);
         printList(node);
 
-        System.out.println("");
+        //System.out.println(midElement(node).data);
 
         Set<Node> nodeSet= new HashSet<>();
 

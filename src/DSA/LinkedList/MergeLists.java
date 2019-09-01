@@ -138,16 +138,3 @@ class MergeLists
 
 }
 
-
-/*This is a function problem.You only need to complete the function given below*/
-/*
-  Merge two linked lists
-  head pointer input could be NULL as well for empty list
-  Node is defined as
-    class Node
-    {
-        int data;
-        Node next;
-        Node(int d) {data = d; next = null; }
-    }
-*/

@@ -2,91 +2,112 @@ package DSA.LinkedList;
 
 public class PalindromeCheck {
 
-        static class Node{
-             Node(Character c) {
-                this.character = c;
-            }
-
-            Node next;
-            Character character;
+    static class Node {
+        Node(Character c) {
+            this.character = c;
         }
 
-         static void push(Node head, Character c){
-            if(head == null){
-                head = new Node(c);
-            }
-            while(head.next!=null){
-                head = head.next;
-            }
-            head.next = new Node(c);
+        Node next;
+        Character character;
+    }
+
+    static void push(Node head, Character c) {
+        if (head == null) {
+            head = new Node(c);
         }
+        while (head.next != null) {
+            head = head.next;
+        }
+        head.next = new Node(c);
+    }
 
-        static boolean checkPalindrome(Node head){
+    static boolean checkPalindrome(Node head) {
 
-            Node fastPtr = head, slowPtr = head;
-            Node prevSlowPtr = null;
-            Node midNode;
-            if((head.next == null) || (head.next.next ==null))
-                return true;
+        Node fastPtr = head, slowPtr = head;
+        Node prevSlowPtr = null;
+        Node midNode;
+        if ((head.next == null) || (head.next.next == null))
+            return true;
 
-            while(fastPtr.next != null && fastPtr.next.next!=null){
-                fastPtr = fastPtr.next.next;
-                prevSlowPtr = slowPtr;
-                slowPtr = slowPtr.next;
-            }
+        while (fastPtr.next != null && fastPtr.next.next != null) {
+            fastPtr = fastPtr.next.next;
+            prevSlowPtr = slowPtr;
+            slowPtr = slowPtr.next;
+        }
             /*if(fastPtr.next != null){
                 midNode = slowPtr;
             }*/
 
-            prevSlowPtr.next = null;
+        prevSlowPtr.next = null;
 
 
-            Node secondHalf = reverse(slowPtr.next);
-            return compareLists(head, secondHalf);
+        Node secondHalf = reverse(slowPtr.next);
+        return compareLists(head, secondHalf);
 
-        }
-
-    private static boolean compareLists(Node head, Node secondHalf) {
-            Node temp1 = head;
-            Node temp2= secondHalf;
-
-            while(temp1!=null && temp2!=null){
-                if(temp1.character.compareTo(temp2.character)!=0)
-                    return false;
-                temp1= temp1.next;
-                temp2 = temp2.next;
-            }
-
-            return true;
     }
 
-    static Node reverse(Node head){
-            if(head.next==null)
-                return head;
+    private static boolean compareLists(Node head, Node secondHalf) {
+        Node temp1 = head;
+        Node temp2 = secondHalf;
 
-            Node prev = null, current, next;
-
-            current = head;
-
-            while(current!=null){
-                next = current.next;
-                current.next = prev;
-                prev = current;
-                current = next;
-            }
-            return prev;
+        while (temp1 != null && temp2 != null) {
+            if (temp1.character.compareTo(temp2.character) != 0)
+                return false;
+            temp1 = temp1.next;
+            temp2 = temp2.next;
         }
+
+        return true;
+    }
+
+    static Node reverse(Node head) {
+        if (head.next == null)
+            return head;
+
+        Node prev = null, current, next;
+
+        current = head;
+
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+    static Node left;
+
+    private static boolean isPal(Node head, Node right){
+
+
+        left = head;
+        if(right==null)
+            return true;
+
+        boolean isp = isPal(head, right.next);
+
+        if(!isp)
+            return false;
+
+        boolean isp1 = left.character.compareTo(right.character)==0;
+
+        left = left.next;
+
+        return isp1;
+
+    }
 
 
     public static void main(String[] args) {
         Node node = new Node('a');
 
         push(node, 'b');
-        push(node, 'c');
-        push(node,'b');
-        push(node, 'a');
+        push(node, 'g');
+        push(node, 'b');
+        push(node, 'r');
 
-        System.out.println(checkPalindrome(node)+"");
+        System.out.println(isPal(node, node) + "");
 
 
     }

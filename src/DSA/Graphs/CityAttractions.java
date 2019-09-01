@@ -27,9 +27,9 @@ public class CityAttractions {
             //edges = edgeTime.length;
             adjacencyList = new LinkedList[v];
             timeMap = new HashMap<>();
-            /*edgeList = new  LinkedList[edges];
+            /*edgeList = new  ReverseLinkedList[edges];
             for(int i=0;i<edges;i++){
-                edgeList[i] = new LinkedList<>();
+                edgeList[i] = new ReverseLinkedList<>();
             }*/
             this.weight = weight;
             //this.edgeTime = edgeTime;

@@ -119,7 +119,7 @@ public class kCores {
             }
         }
 
-        *//*int size(LinkedList<Integer> ll){
+        *//*int size(ReverseLinkedList<Integer> ll){
             int size=0;
             Iterator it = ll.listIterator();
             while (it.hasNext()){

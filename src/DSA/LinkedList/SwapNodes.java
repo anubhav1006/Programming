@@ -97,7 +97,7 @@ public class SwapNodes {
             System.out.print("Linked list before calling swapNodes() ");
             start.printList();
 
-            start=swapNodes(start, 6, 3);
+            start=swapNodes(start, 3, 6);
 
             System.out.print("Linked list after calling swapNodes() ");
             start.printList();
