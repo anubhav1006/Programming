@@ -19,7 +19,7 @@ public class ChoclateDistributionProblem {
             int m = Integer.parseInt(in.nextLine());
             System.out.println(minDifference(arr,n,m));
             t--;
-            Integer.parseInt();
+
         }
     }
 
