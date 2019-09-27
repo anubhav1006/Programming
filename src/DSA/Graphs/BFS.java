@@ -127,7 +127,7 @@ public class BFS {
         //graph.addEdge(3, 3);
 */
 
-        g.modifiedBfs(0,2);
-        System.out.println("New");
+        g.dfs(0);
+       // System.out.println("New");
     }
 }
