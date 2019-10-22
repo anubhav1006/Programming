@@ -45,12 +45,11 @@ public class SortLL012 {
             }
             return head;
         }
-
-
     }
 
+
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
+        /*LinkedList ll = new LinkedList();
         ll.head = new node(1);
         ll.head.next = new node(2);
         ll.head.next.next = new node(2);
@@ -60,8 +59,7 @@ public class SortLL012 {
         ll.head.next.next.next.next.next.next = new node(2);
         ll.head.next.next.next.next.next.next.next = new node(2);
 
-        printLL(ll.sort());
-
+        printLL(ll.sort());*/
 
     }
 
