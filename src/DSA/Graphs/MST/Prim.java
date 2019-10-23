@@ -40,7 +40,6 @@ public class Prim {
             //Start of graph
             keySet[0]=0;
             minSpanSet[0]= -1;
-            int counter =0;
             for(int i=0;i<v-1;i++) {
                 int min_key = findMinKey(keySet,spanned);
                 spanned[min_key] = true;
