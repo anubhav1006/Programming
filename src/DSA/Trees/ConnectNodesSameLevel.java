@@ -44,6 +44,7 @@ public class ConnectNodesSameLevel {
         Queue<Node> q = new LinkedList<>();
         q.add(root);
         q.add(null);
+
         while(!q.isEmpty()){
             Node temp = q.poll();
             if(temp!=null) {
