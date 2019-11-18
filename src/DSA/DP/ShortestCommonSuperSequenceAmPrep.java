@@ -31,6 +31,7 @@ public class ShortestCommonSuperSequenceAmPrep {
             }
         }
         //return val[m][n]+"";
+        System.out.println(val[m][n]);
 
         String res = "";
 

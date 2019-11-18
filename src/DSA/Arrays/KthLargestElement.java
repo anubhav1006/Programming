@@ -16,6 +16,7 @@ public class KthLargestElement {
         for(int i=0;i<k;i++){
             heap[i] = arr[i];
         }
+        heapify(0);
         for(int i=k;i<arr.length;i++){
             if(arr[i]>heap[0]) {
                 heap[0] = arr[i];

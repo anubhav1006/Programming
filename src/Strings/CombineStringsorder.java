@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class CombineStringsorder {
     public static void main(String[] args) {
-        String a = "abc";
-        String b = "xyz";
+        String a = "AB";
+        String b = "CD";
 
         int n1 = a.length();
         int n2 = b.length();
@@ -22,13 +22,13 @@ public class CombineStringsorder {
                 res1.add(b.substring(0,j)+t1+b.substring(j)+t2);
             }
         }
-        for (int i=1;i<=n1;i++){
+        /*for (int i=1;i<=n1;i++){
             String t1 = b.substring(0,i);
             String t2 = b.substring(i);
             for (int j=0;j<n2;j++){
                 res1.add(a.substring(0,j)+t1+a.substring(j)+t2);
             }
-        }
+        }*/
 
         for (String result:res1){
             System.out.println(result);

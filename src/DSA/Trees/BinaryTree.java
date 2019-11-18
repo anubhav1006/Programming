@@ -104,7 +104,7 @@ public class BinaryTree {
             if(h==1){
                 System.out.print(root.key+" ");
             }
-            if(counter) {
+            if(!counter) {
                 if (root.left != null)
                     printLevelSpiral(root.left, h - 1,counter);
                 if (root.right != null)
@@ -130,7 +130,7 @@ public class BinaryTree {
         tree.root.right.left = new node(5);
         tree.root.right.right = new node(6);
 
-        System.out.println("Preorder: ");
+        /*System.out.println("Preorder: ");
         tree.inorder(tree.root);
         System.out.println("");
         System.out.println("Postorder:");
@@ -145,7 +145,7 @@ public class BinaryTree {
         System.out.println("LevelOrder Using print level:");
         tree.levelOrderUsingLevel(tree.root);
         System.out.println("");
-        System.out.println("LevelOrderSpiral:");
+        System.out.println("LevelOrderSpiral:");*/
         tree.levelOrderUsingLevelSpiral(tree.root);
 
     }
